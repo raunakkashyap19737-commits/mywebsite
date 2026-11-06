@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raunak Kashyap - Computer & Linux Mastery</title>
+    <style>
+        /* Base Reset & Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* RGB Animated Glowing Text Effect */
+        .rgb-text {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ff0055, #7a00ff, #00e5ff, #00ff66, #ff0055);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgbGlow 8s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.6));
+        }
+
+        @keyframes rgbGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 5% 50px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(122, 0, 255, 0.18) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: #94a3b8;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: #ffffff;
+            padding: 16px 38px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Cards & Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #00e5ff;
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #00e5ff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            padding: 8px 0;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card ul li::before {
+            content: "⚡ ";
+            color: #00ff66;
+        }
+
+        /* Terminal Display Box */
+        .terminal-box {
+            background: #050811;
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            padding: 25px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 50px;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+        }
+
+        /* Contact Area */
+        .contact {
+            background: #070a13;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        .contact p {
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .contact-email {
+            font-size: 1.3rem;
+            color: #00e5ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #03050a;
+            color: #64748b;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .rgb-text { font-size: 1.6rem; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Glowing RGB Name -->
+    <nav>
+        <div class="rgb-text">Raunak Kashyap</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Master Computer Fundamentals & Linux Commands</h1>
+        <p>कंप्यूटर की संपूर्ण जानकारी, सॉफ्टवेयर इंस्टॉलेशन और Linux टर्मिनल कमांड्स सीखें आसानी से - Raunak Kashyap के साथ!</p>
+        
+        <!-- Direct WhatsApp Channel Link -->
+        <a href="https://whatsapp.com/channel/0029VbCKvWAGk1G2bRfCRR0c" target="_blank" class="btn-whatsapp">
+            📲 Join WhatsApp Channel
+        </a>
+    </section>
+
+    <!-- Course Modules -->
+    <div class="container">
+        <h2 class="section-title">Course Topics & Modules</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🖥️ Computer Basics</h3>
+                <ul>
+                    <li>Computer Hardware Setup</li>
+                    <li>OS Installation & Dual Boot</li>
+                    <li>Software Installation & Setup</li>
+                    <li>System Troubleshooting</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🐧 Linux & Commands</h3>
+                <ul>
+                    <li>Linux Basic Architecture</li>
+                    <li>Essential Shell Commands</li>
+                    <li>File & Permission Management</li>
+                    <li>Process Management</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Practical Learning</h3>
+                <ul>
+                    <li>Terminal Basics</li>
+                    <li>Useful Commands & Scripting</li>
+                    <li>Networking Concepts</li>
+                    <li>Real World Examples</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="terminal-box">
+            <p>> loading_course_modules...</p>
+            <p>> initializing_welcome_audio...</p>
+            <p>> echo "Welcome to Raunak Kashyap's Tech Class!"</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact & Support</h2>
+        <p>किसी भी सवाल या जानकारी के लिए संपर्क करें:</p>
+        <a href="mailto:ranakashyap1998@gmail.com" class="contact-email">📧 ranakashyap1998@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Raunak Kashyap. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts for Audio and Smooth Auto-Scroll -->
+    <script>
+        // 1. Automatic Realistic Female Voice Speech
+        const welcomeMessage = "आपका स्वागत है वेब सीरीज़ में! इस चैनल को फॉलो करें, यहाँ आपको कंप्यूटर और लिनक्स के बारे में बहुत सारी जानकारी सीखने को मिलेगी।";
+
+        function speakWelcome() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Reset any previous audio
+
+                const utterance = new SpeechSynthesisUtterance(welcomeMessage);
+                utterance.lang = 'hi-IN';
+                utterance.rate = 0.95; // Clear speaking speed
+
+                // Try selecting a natural female voice if available
+                const voices = window.speechSynthesis.getVoices();
+                const femaleVoice = voices.find(v => v.lang.includes('hi') && (v.name.includes('Female') || v.name.includes('Google') || v.name.includes('Hindi')));
+                if (femaleVoice) {
+                    utterance.voice = femaleVoice;
+                }
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Trigger Voice Automatically on Load or First User Interaction
+        function triggerAutoVoice() {
+            speakWelcome();
+            // Remove click/touch listeners once audio is triggered
+            window.removeEventListener('click', triggerAutoVoice);
+            window.removeEventListener('touchstart', triggerAutoVoice);
+        }
+
+        window.addEventListener('load', () => {
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = speakWelcome;
+            }
+            speakWelcome();
+            
+            // Backup for mobile browsers that block unmuted autoplay
+            window.addEventListener('click', triggerAutoVoice);
+            window.addEventListener('touchstart', triggerAutoVoice, { passive: true });
+        });
+
+        // 2. Smooth Auto Scroll Functionality
+        let scrollSpeed = 1; 
+        let autoScrollInterval;
+        let userInteracted = false;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (!userInteracted) {
+                    window.scrollBy(0, scrollSpeed);
+                    
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                        window.scrollTo(0, 0); // Loop back to top
+                    }
+                }
+            }, 30);
+        }
+
+        function stopAutoScroll() {
+            userInteracted = true;
+            clearInterval(autoScrollInterval);
+        }
+
+        // Event listeners to stop auto-scroll on interaction
+        window.addEventListener('load', startAutoScroll);
+        window.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        window.addEventListener('mousedown', stopAutoScroll);
+        window.addEventListener('wheel', stopAutoScroll);
+        window.addEventListener('keydown', stopAutoScroll);
+    </script>
+</body>
+</html>
 
